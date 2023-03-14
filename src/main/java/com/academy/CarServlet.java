@@ -26,6 +26,13 @@ public class CarServlet extends HttpServlet {
 
         writer.println("</body>");
         writer.println("</html>");*/
+
+        var carService = new CarService();
+
+        var cars = carService.getCars();
+
+        req.setAttribute("cars", cars);
+
         req.getRequestDispatcher("/WEB-INF/jsp/car.jsp").forward(req, resp);
     }
 }
